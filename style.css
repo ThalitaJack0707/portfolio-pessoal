@@ -130,6 +130,19 @@ nav {
   margin: 0.5rem 5rem;
 }
 
+.carousel-slide {
+  opacity: 0;
+  transform: translateX(100%);
+  position: absolute;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  position: relative;
+}
+
 #switch button {
   position: absolute;
   z-index: 1;
@@ -545,6 +558,7 @@ img.balls {
   padding: 0 2rem;
   width: 100%;
 }
+
 
 .carousel-slides {
   display: flex;

@@ -91,7 +91,7 @@ updateTextColor();
 const sections = document.querySelectorAll('section');
 sections.forEach((section) => {
     section.style.opacity = '0';
-    // section.style.transform = 'translateY(100px)';
+    section.style.transform = 'translateY(100px)';
     section.style.transition = 'opacity 1s, transform 1s';
 });
 
@@ -104,4 +104,43 @@ const observer = new IntersectionObserver((entries) => {
     });
 });
 
+
 sections.forEach((section) => observer.observe(section));
+
+// ========================== CARROSSEL ==========================
+// ========================== CARROSSEL ==========================
+const slides = document.querySelectorAll('.carousel-slide');
+const prevButton = document.querySelector('.carousel-button.prev');
+const nextButton = document.querySelector('.carousel-button.next');
+let currentIndex = 0;
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active'); // Remove a classe active de todos os slides
+        if (i === index) {
+            slide.classList.add('active'); // Adiciona a classe active no slide atual
+        }
+    });
+}
+
+nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+});
+
+prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+});
+
+// Exibir o primeiro slide ao carregar a página
+showSlide(currentIndex);
+
+// Função para avançar automaticamente a cada 5 segundos
+function autoSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+}
+
+// Configurar o intervalo para passar os slides a cada 5 segundos
+setInterval(autoSlide, 5000); // 5000 milissegundos = 5 segundos
