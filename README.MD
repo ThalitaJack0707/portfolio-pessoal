@@ -52,7 +52,7 @@ Portfólio profissional de: **Thalita**, desenvolvido para mostrar meus projetos
 
 | Modo Escuro 🌑 | Modo Claro ☀️ |
 |---------------|---------------|
-| ![Dark Mode](img/screenshot-dark.png) | ![Light Mode](img/screenshot-light.png) |
+| ![Dark Mode](img/modo%20escuro%20icon.png) | ![Light Mode](img/modo%20claro%20icon.png) |
 
 ## 🤝 Contribuições
 
